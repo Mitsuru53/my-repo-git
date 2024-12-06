@@ -1,0 +1,12 @@
+name: Overrde Environment variables
+on: push
+env:
+  EXAMPLE: Defining by workflow level
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${EXAMPLE}"
+      - env:
+          EXAMPLE: Defining by step level
+        run: echo "${EXAMPLE}"
